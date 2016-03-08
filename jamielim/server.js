@@ -1,11 +1,20 @@
 "use strict";
 
 const net = require("net");
-const server = net.createServer((connection) => {
-  connection.on("data", (data) => {
+const fs = require("fs");
+const createUniqueFileName = require(__dirname + "/lib/createUniqueFileName.js");
+
+const server = net.createServer((socket) => {
+  socket.on("data", (data) => {
     console.log(data.toString("utf-8"));
   });
-  connection.on("end", () => {
+
+  let uniqueFileName = createUniqueFileName();
+  console.log(uniqueFileName);
+  var file = fs.createWriteStream(__dirname + "/files/" + uniqueFileName);
+  socket.pipe(file);
+
+  socket.on("end", () => {
     console.log("bye!");
   });
 });
