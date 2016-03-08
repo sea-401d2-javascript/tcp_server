@@ -6,7 +6,7 @@ var time = new Date().getTime();
 var server = net.createServer((connection) => {
   connection.on('data', (data) => {
     console.log(data.toString('utf-8'))
-    fs.writeFile(__dirname + '/requests' + time + '.txt', data)
+    fs.writeFile(__dirname + '/log/requests' + time + '.txt', data)
 });
 
 connection.on('end', () => {
