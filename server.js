@@ -3,10 +3,19 @@ var fs = require('fs');
 
 var server = net.createServer((socket) => {
 
+  socket.write('HTTP/1.1 200');
+  socket.write('Content-Type: text/plain');
+  socket.write('plz respond');
+
+  console.log('connection');
+
   socket.on('data', (data) => {
-    var timestamp = (new Date()).getTime();
-    console.log(timestamp);
-    fs.write();
+    var d = new Date();
+    var timestamp = d.getMonth() + '-' + d.getDate() + '-' + d.getFullYear() + '-at-' + d.getHours() + '-' + d.getMinutes() + '-' +d.getSeconds() + '-' +d.getMilliseconds();
+    fs.writeFile('receipt/'+timestamp, data, (err) => {
+      if (err) throw err;
+      console.log(data, ' written to ', 'receipt/'+timestamp);
+    });
   });
 
   socket.on('close', () => {
@@ -14,5 +23,5 @@ var server = net.createServer((socket) => {
   })
 
 }).listen(3000, () => {
-  console.log('server speaking');
+  console.log('server speaking.');
 });
