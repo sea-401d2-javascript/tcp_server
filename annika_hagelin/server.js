@@ -17,6 +17,7 @@ var server = net.createServer((socket) => {
         socket.write('Content-Type: text/plain');
       }
     });
+
   });
 
   socket.on('close', () => {
