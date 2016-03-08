@@ -8,19 +8,17 @@ describe('test writeLog() in tcp.js', function() {
   it('writeLog(data, timeStamp) should return valid file directory', function(done) {
     let data = 'test_message';
     let timeStamp = new Date();
-
     let result = writeLog(data, timeStamp.toString());
 
     fs.exists(result, function(exists) {
       if(exists) {
         console.log('        the file exists');
         expect(true).to.be.true;
-        done();
       } else {
         console.log('        the file doesn\'t exist');
         expect(false).to.be.true;
-        done();
       }
+      done();
     });
   });
 });
