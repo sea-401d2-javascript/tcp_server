@@ -18,6 +18,7 @@ var server = net.createServer( (socket) => {
   });
   socket.on('end', () => {
     fs.writeFile(__dirname + '/log/' + logName, saveLog);
+    console.log('ending write file');
   })
 }).listen(3000, () => {
   console.log('server started');
