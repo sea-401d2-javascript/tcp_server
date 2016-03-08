@@ -17,3 +17,16 @@ describe('tcp.js', () => {
     done();
   });
 });
+
+
+describe('tcp-concat.js', () => {
+  it('should respond with a 200 status', (done)=> {
+    chai.request('http://localhost:8000').get('/')
+    .end((err, response)=> {
+      // if (err) throw err;
+      expect(err).to.be(null);
+      expect(response).to.have.status(200);
+    });
+    done();
+  });
+});
