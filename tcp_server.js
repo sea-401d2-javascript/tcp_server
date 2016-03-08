@@ -9,8 +9,11 @@ var server = net.createServer( (socket) => {//Each time there is a connection
 
   socket.on('data', (data) => {
     var date = new Date();
-    fs.writeFile(__dirname + '/log/data_log_' + date + '.txt', data);
-    console.log('data' + date + '.txt was created');
+    fs.writeFile(__dirname + '/log/data_log_' + date + '.txt', data, (err) =>{
+      if (err) throw err;
+      console.log('data' + date + '.txt was created');
+    });
+
   });
 
   socket.on('end', () => {
