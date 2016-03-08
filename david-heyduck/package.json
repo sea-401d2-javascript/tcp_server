@@ -1,0 +1,30 @@
+{
+  "name": "david-heyduck",
+  "version": "1.0.0",
+  "description": "Basic TCP Server Assignment",
+  "main": "tcp-server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyduckd/tcp_server.git"
+  },
+  "keywords": [
+    "TCP",
+    "Server"
+  ],
+  "author": "David Heyduck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heyduckd/tcp_server/issues"
+  },
+  "homepage": "https://github.com/heyduckd/tcp_server#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "gulp": "^3.9.1",
+    "mocha": "^2.4.5",
+    "socket.io": "^1.4.5"
+  }
+}
