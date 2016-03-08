@@ -14,6 +14,7 @@ describe('test writeLog() in tcp.js', function() {
       if(exists) {
         console.log('        the file exists');
         expect(true).to.be.true;
+        fs.unlink(result);
       } else {
         console.log('        the file doesn\'t exist');
         expect(false).to.be.true;
@@ -22,19 +23,3 @@ describe('test writeLog() in tcp.js', function() {
     });
   });
 });
-
-/*
-var fs = require('fs');
-var gutil = require('gulp-util');
-
-fs.exists('./www/index.html', function(exists) {
-  if(exists) {
-    //Show in green
-    console.log(gutil.colors.green('File exists. Deleting now ...'));
-    fs.unlink('./www/index.html');
-  } else {
-    //Show in red
-    console.log(gutil.colors.red('File not found, so not deleting.'));
-  }
-});
-*/
