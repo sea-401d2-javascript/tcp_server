@@ -3,11 +3,12 @@
 const net = require('net');
 const fs = require('fs');
 
+
 net.createServer((socket) => {
   console.log('server is connected');
-  fs.writeFile(__dirname + '/server-logs/' + Date.now() + Math.random());
-  fs.createWriteStream(__dirname + '/server-logs/' + Date.now() + Math.random());
+
   socket.on('data',(data) => {
+    fs.writeFile(__dirname + '/server-logs/' + Date.now() + '.txt', 'This file was created on ' + Date());
     console.log('data ' + data);
   });
   socket.on('close',() => {
