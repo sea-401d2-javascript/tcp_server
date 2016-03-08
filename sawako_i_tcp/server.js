@@ -1,8 +1,7 @@
 'use strict';
 const net = require('net');
 const fs = require('fs');
-// const EventEmitter = require('events').EventEmitter;
-// const emitter = new EventEmitter();
+
 
 net.createServer((socket) => {
 //creating date and time created here
@@ -21,7 +20,8 @@ net.createServer((socket) => {
       }
     });
   });
+
   socket.end();
 }).listen(3000, () =>{
-  console.log('sever started!');
+  console.log('server started!');
 });
