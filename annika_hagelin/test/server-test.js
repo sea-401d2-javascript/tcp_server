@@ -6,7 +6,7 @@ chai.use(chaiHttp);
 
 describe('server testing', () => {
 
-  it('shoud connect to server', (done) => {
+  it('shoud make get request to server', (done) => {
     chai.request('http://localhost:3000')
       .get('/')
       .end(function (err, res) {
@@ -16,6 +16,20 @@ describe('server testing', () => {
         //  expect(res).to.have.status(200); //no reply
         console.log(res);
          done();
+      });;
+
+      console.log('made request');
+  });
+
+  it('should make put request to server', (done) => {
+    chai.request('http://localhost:3000')
+      .put('/plz')
+      .set('hjalp', 'mig')
+      .end(function (err, res) {
+        console.log('request ended');
+        // if (err) throw err;
+        console.log(res);
+        done();
       });;
 
       console.log('made request');

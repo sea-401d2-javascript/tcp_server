@@ -8,6 +8,7 @@ var server = net.createServer((socket) => {
     var timestamp = d.getMonth() + '-' + d.getDate() + '-' + d.getFullYear() + '-at-' + d.getHours() + '-' + d.getMinutes() + '-' +d.getSeconds() + '-' +d.getMilliseconds();
     fs.writeFile('receipt/'+timestamp, data, (err) => {
       if (err) {
+        console.log('write error');
         socket.write('HTTP/1.1 500');
         throw err;
       } else {
@@ -20,7 +21,8 @@ var server = net.createServer((socket) => {
 
   socket.on('close', () => {
     socket.end();
-  })
+    console.log('socket closed');
+  });
 
 }).listen(3000, () => {
   console.log('server speaking.');
