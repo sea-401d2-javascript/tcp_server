@@ -13,15 +13,12 @@ exports.createUniqueName = createUniqueName;
 var server = net.createServer( (socket) => {
   var saveLog = '';
   var logName = createUniqueName();
-  socket.write('HTTP/1.1 200\n');
-  socket.write('Content-Type: text/plain\n');
-  socket.write('What\'s up?\n');
-  socket.on('data', function(data) {
+  socket.on('data', (data) => {
     saveLog += data.toString('utf-8');
   });
-  socket.on('end', function() {
+  socket.on('end', () => {
     fs.writeFile(__dirname + '/log/' + logName, saveLog);
-    console.log(saveLog);
-    console.log('see ya!');
   })
-}).listen(3000);
+}).listen(3000, () => {
+  console.log('server started');
+});
