@@ -1,0 +1,26 @@
+{
+  "name": "mikleane",
+  "version": "0.1.0",
+  "description": "Simple TCP Server",
+  "main": "server.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Mikleane Chouinard",
+  "license": "ISC",
+  "keywords": [
+    "TCP",
+    "server",
+    "client",
+    "fun"
+  ],
+  "devDependencies": {
+    "chai-http": "^2.0.1",
+    "gulp-eslint": "^2.0.0",
+    "gulp-mocha": "^2.2.0"
+  }
+}
