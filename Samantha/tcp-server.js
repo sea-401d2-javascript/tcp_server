@@ -8,7 +8,7 @@ var server = net.createServer((socket) => {
   socket.write('Content-Type: plain/text');
   socket.end();
   socket.on('data', (data) => {
-    fs.writeFile(__dirname + '/requests' + time + '.txt', data)
+    fs.writeFile(__dirname + '/logs/requests' + time + '.txt', data)
   });
 
   socket.on('end', () =>{
