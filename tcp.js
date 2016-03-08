@@ -7,7 +7,7 @@ var server = net.createServer(function(connection) {
     let timeStamp = new Date();
     let message = 'Connection made at: ' + timeStamp + '\n' +
                   'data: ' + data;
-    let timeString = timeStamp.toString().replace(/s/g, '');
+    let timeString = timeStamp.toString().replace(/\s+/g, '-');
     fs.writeFileSync(__dirname + '/logs/'+ timeString +'.txt', message);
   });
 
