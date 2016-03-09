@@ -1,0 +1,31 @@
+{
+  "name": "tcp_server",
+  "version": "0.1.0",
+  "description": "tcp server",
+  "main": "server.js",
+  "dependencies": {
+    "uuid": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^2.2.0",
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jalynnlim/tcp_server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jalynnlim/tcp_server/issues"
+  },
+  "homepage": "https://github.com/jalynnlim/tcp_server#readme"
+}
