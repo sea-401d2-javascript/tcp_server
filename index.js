@@ -10,7 +10,7 @@ var server = net.createServer((socket)=>{
   socket.on('data', (data)=>{
     console.log('data received: ', data.toString());
   });
-  var file = fs.createWriteStream(__dirname + '/response-data/' + Date() + '.js';
+  var file = fs.createWriteStream(__dirname + '/response-data/' + Date() + '.js');
   socket.pipe(file);
   socket.on('close', ()=>{
     socket.end();
