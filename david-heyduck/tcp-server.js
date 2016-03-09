@@ -12,8 +12,8 @@ var server = net.createServer((socket)=>{
     fs.writeFile('./logs/clientdata(' + date + ').txt');
     console.log('Client Connected');
   });
-    socket.on('end',()=>{
-    socket.close();
+    socket.on('close',()=>{
+    socket.end();
   });
 });
 
