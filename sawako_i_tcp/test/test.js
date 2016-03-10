@@ -1,15 +1,28 @@
 'use strict';
-var expect = require('chai').expect;
-// var chaihttp = require('chai-http');
+var chai = require('chai');
+var fs = require('fs');
 
-// chaihttp.use(chaihttp);
+var expect = chai.expect;
+require( __dirname + '/../server.js');
+
 
 describe('Testing TCP server if it is connecting', () => {
-  it('should send response of status 200', () =>{
-    chaihttp.request('http://localhost3000')
-    .get('/')
-    .then((socket) =>{
-      expect(socket).to.have.status(300);
+  var now = new Date();
+  var nowWrite = now.toISOString();
+  var time = now.getTime();
+  var nowTime = '/log/' + time + '.txt';
+  var path;
+
+  before((done)=>{
+    fs.writeFile( __dirname + '/' + nowTime, nowWrite, (err)=>{
+      var pathArray = err.path.split('/');
+      path = '/log/' + pathArray[9];
+      console.log(pathArray);
+      console.log(path);
+      done();
     });
+  });
+  it('should create a file with time stamp', () =>{
+    expect(path).to.eql(nowTime);
   });
 });
