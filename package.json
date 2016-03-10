@@ -1,0 +1,31 @@
+{
+  "name": "tcp_server",
+  "version": "1.0.0",
+  "description": "TCP server that takes in a read stream and outputs a file",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexwuwei/tcp_server.git"
+  },
+  "keywords": [
+    "tcp",
+    "server",
+    "async",
+    "streams"
+  ],
+  "author": "Hugo A Guerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexwuwei/tcp_server/issues"
+  },
+  "homepage": "https://github.com/alexwuwei/tcp_server#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-http": "^2.0.1",
+    "mocha": "^2.4.5"
+  }
+}
