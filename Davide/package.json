@@ -1,0 +1,19 @@
+{
+  "name": "tcp_server",
+  "version": "1.0.0",
+  "description": "create a simple tcp logging server",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FazioD/tcp_server.git"
+  },
+  "author": "Davide Fazio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FazioD/tcp_server/issues"
+  },
+  "homepage": "https://github.com/FazioD/tcp_server#readme"
+}
