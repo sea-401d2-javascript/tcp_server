@@ -6,7 +6,7 @@ var server = net.createServer( (socket) => { //socket is the connection that is 
   var file = fs.createWriteStream('./' + new Date());
   socket.pipe(file);//piping info that browser is sending to server and writing that info to a file
   socket.on('end', () => {
-    console.log('packet received');
+    console.log('client disconnected');
   });
 });
 
